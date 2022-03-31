@@ -5,6 +5,7 @@ import MyAbout from '../pages/MyAbout'
 import MyHome from '../pages/MyHome'
 import HomeNews from '../pages/HomeNews'
 import HomeMessage from '../pages/HomeMessage'
+import MessageDetial from '../pages/MessageDetial'
 
 export const router = new VueRouter({
     base: '/',
@@ -23,7 +24,14 @@ export const router = new VueRouter({
                 {
                     name : 'HomeMessage',
                     path : 'HomeMessage',
-                    component : HomeMessage
+                    component : HomeMessage,
+                    children : [
+                        {
+                            name : 'MessageDetial',
+                            path : 'MessageDetial',
+                            component : MessageDetial
+                        }
+                    ]
                 },
                 {
                     name : 'HomeNews',
