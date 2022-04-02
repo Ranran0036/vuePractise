@@ -29,7 +29,13 @@ export const router = new VueRouter({
                         {
                             name : 'MessageDetial',
                             path : 'MessageDetial',
-                            component : MessageDetial
+                            component : MessageDetial,
+                            props({query}){
+                                return {
+                                    id : query.id,
+                                    title : query.title
+                                }
+                            }
                         }
                     ]
                 },

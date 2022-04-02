@@ -1,15 +1,13 @@
 <template>
     <div>
-        id-{{this.$route.query.id}}  title-{{this.$route.query.title}}
+        id-{{id}}  title-{{title}}
     </div>
 </template>
 
 <script>
     export default {
         name : 'MessageDetial',
-        mounted(){
-            //console.log(this)
-        }
+        props : ['id' , 'title']
     }
 </script>
 
