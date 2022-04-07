@@ -1,9 +1,12 @@
 <template>
 	<div>
 		<div>
-			<div class="row">
+			<div class="row" style="padding-bottom:20px">
 				<div class="col-xs-offset-2 col-xs-8">
-					<div class="page-header"><h2>Vue Router Demo</h2></div>
+					<div class="page-header">
+						<h2 :style="{color : titleColor}">Vue Router Demo</h2>
+					</div>
+					<button @click="changeTitleColor" type="button" class="btn btn-info">Random Color</button>
 				</div>
 			</div>
 			<div class="row">
@@ -29,5 +32,18 @@
 
 	export default {
 		name : 'App',
+		data() {
+			return {
+				titleColor: '#000'
+			}
+		},
+		methods: {
+			randomColor() {
+				return `#${Math.floor(Math.random() * 0xffffff).toString(16)}`;
+			},
+			changeTitleColor(){
+				this.titleColor = this.randomColor();
+			}
+		},
 	}
 </script>
