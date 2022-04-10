@@ -41,6 +41,9 @@
 			randomColor() {
 				return `#${Math.floor(Math.random() * 0xffffff).toString(16)}`;
 			},
+			randomFontSize() {
+				return `${Math.floor(Math.random() * 100)}px`;
+			},
 			changeTitleColor(){
 				this.titleColor = this.randomColor();
 			}
